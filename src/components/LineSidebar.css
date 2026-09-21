@@ -9,7 +9,6 @@
   --item-gap: 20px;
   --font-size: 1.1rem;
   --smoothing: 100ms;
-
   position: relative;
   display: flex;
   justify-content: flex-start;
@@ -33,7 +32,7 @@
    step, with no CSS transitions to stagger. */
 .line-sidebar__item {
   position: relative;
-  cursor: pointer;
+  cursor:default ;
 }
 
 /* Widen the pointer target so items react a touch before the cursor arrives */

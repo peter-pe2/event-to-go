@@ -3,6 +3,15 @@ import ColorBends from './effects/ColorBends'
 import GradualBlur from './effects/GradualBlur'
 import './App.css'
 import LineSidebar from './components/LineSlidebar'
+import ScrollExpand from './components/ScrollExpand'
+import ScrollVelocity from './components/ScrollVelocity'
+import mediaImg from './assets/media.jpg'
+import lightingImg from './assets/lighting.jpg'
+import soundImg from './assets/sound.jpg'
+import orgnizationImg from './assets/orgnization.jpg'
+import ledImg from './assets/MOH_5896.jpg'
+import stageImg from './assets/stage.jpg'
+
 
 function App() {
   return (
@@ -43,7 +52,20 @@ function App() {
               onItemClick={(index, label) => console.log(index, label)}
             />
           </div>
+          <div style={{ width: '100%', margin: '50px 0' }}>
+            <ScrollVelocity
+              texts={[' Event To Go ','Stage Design * Sound System * Lighting System * LED Screens * Organization Services * Media Services']}
+              velocity={100}
+              className="custom-scroll-text"
+            />
+          </div>
           <div className='photos-container'>
+            <ScrollExpand src={mediaImg} title="Media Services" mediaZoom={1.35} startWidth={30} startHeight={42} useWindowScroll />
+            <ScrollExpand src={lightingImg} title="Lighting Services" mediaZoom={1.35} startWidth={30} startHeight={42} useWindowScroll />
+            <ScrollExpand src={soundImg} title="Sound Services" mediaZoom={1.35} startWidth={30} startHeight={42} useWindowScroll />
+            <ScrollExpand src={orgnizationImg} title="Organization Services" mediaZoom={1.35} startWidth={30} startHeight={42} useWindowScroll />
+            <ScrollExpand src={ledImg} title="LED Screens" mediaZoom={1.35} startWidth={30} startHeight={42} useWindowScroll />
+            <ScrollExpand src={stageImg} title="Stage Design" mediaZoom={1.35} startWidth={30} startHeight={42} useWindowScroll />
           </div>
         </div>
         <div className='background'>
@@ -65,6 +87,16 @@ function App() {
           />
         </div>
         <div className='bottom-blur'>
+          <GradualBlur
+            target="page"
+            position="top"
+            height="5cm"
+            strength={2}
+            divCount={10}
+            curve="bezier"
+            exponential={true}
+            opacity={1}
+          />
           <GradualBlur
             target="page"
             position="bottom"
